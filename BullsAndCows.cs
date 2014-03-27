@@ -19,12 +19,9 @@ class BullsAndCows
         int c = Convert.ToInt32(Console.ReadLine());
         int cowsCount = 0;
         bool noBullsOrCows = true;
-        
+
         for (int i = 1111; i < 10000; i++)
         {
-
-
-
             //Separate digits from int "i" into new array - checkNumberArray 
             int[] checkNumberArray = new int[4];
             checkNumberArray[3] = i % 10;
@@ -35,34 +32,26 @@ class BullsAndCows
             {
                 for (int d = 0; d < 4; d++)//Loop for counting bulls position test number=5681
                 {
-
                     if (checkNumberArray[d] == secretNumberArray[d])
                     {
-
                         bullsCount = bullsCount + 1;
                     }
                 }
                 if (c != 0)
                 {
-
-
                     for (int q = 0; q < 4; q++)//Loop for counting cows number test number=5681
                     {
                         if (checkNumberArray[q] != secretNumberArray[q])
                         {
                             for (int h = 3; h >= 0; h--)
                             {
-                               
+
                                 if (checkNumberArray[q] == secretNumberArray[h] && secretNumberArray[h] != checkNumberArray[h])
                                 {
-
                                     cowsCount = cowsCount + 1;
-
-
                                 }
                             }
                         }
-
                     }
                 }
                 if (bullsCount == b && cowsCount == c)
@@ -73,14 +62,10 @@ class BullsAndCows
                         noBullsOrCows = false;
                     }
                     Console.Write(" ");
-
                 }
-
                 bullsCount = 0;
                 cowsCount = 0;
-
             }
-
         }
         if (noBullsOrCows == true)
         {
